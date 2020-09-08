@@ -1,0 +1,4 @@
+class WholesalersController < ApplicationController
+
+    
+end
