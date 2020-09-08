@@ -1,0 +1,14 @@
+<%= form_for @wholesaler do |f|%>
+<%= f.label :name %>
+<%= f.text_field :name%>
+<%= f.label :location %>
+<%= f.text_field :location%>
+<%= f.label :occupation %>
+<%= f.text_field :occupation%>
+<% @wholesaler.wholesaler_products.each do |wholesaler_product|%>
+<%= wholesaler_product.product.name%>
+<%= f.label :product%>
+<%= f.text_field :product %>
+<%end%>
+<%= f.submit%>
+<%end%>

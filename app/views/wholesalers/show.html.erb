@@ -1,0 +1,10 @@
+<h2><%= @wholesaler.name%></h2>
+<h4><%= @wholesaler.location%></h4>
+<h4><%= @wholesaler.occupation%></h4>
+
+<h2>Products:</h2>
+<% @wholesaler.wholesaler_products.each do |wholesaler_product|%>
+<h4><%= wholesaler_product.product.name%></h4>
+<%end%>
+
+<%= button_tp "Delete", wholesaler_path(@wholesaler), { method: :delete } %>

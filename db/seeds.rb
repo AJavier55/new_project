@@ -15,15 +15,15 @@ Review.destroy_all
 WholesalerProduct.destroy_all 
 
 
-40.times do 
+60.times do 
     Restaurant.create(name: Faker::Restaurant.name, owner: Faker::Name.name, location: Faker::Address.full_address, cuisine: Faker::Restaurant.type)
 end 
 
-30.times do 
+100.times do 
     Wholesaler.create(name: Faker::Company.name, location: Faker::Address.full_address, occupation: Faker::Food.ingredient)
 end
 
-40.times do
+50.times do
     Review.create!(restaurant_id: Restaurant.all.sample.id, wholesaler_id: Wholesaler.all.sample.id, star_rating: rand(1..5), written_review: Faker::Restaurant.review)
 end
 
@@ -31,6 +31,6 @@ end
     Product.create(name: Faker::Food.ingredient)
 end
 
-50.times do
+80.times do
     WholesalerProduct.create(product_id: Product.all.sample.id, wholesaler_id: Wholesaler.all.sample.id)
 end
