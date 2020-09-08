@@ -1,0 +1,5 @@
+<h1>Wholesalers</h1>
+
+<% @wholesalers.each do |wholesaler|%>
+<p><%= link_to wholesaler.name, wholesaler_path(wholesale.id)%></p>
+<%end%>

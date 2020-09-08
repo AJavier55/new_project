@@ -1,0 +1,17 @@
+<h1>Create a profile</h1>
+
+<%= form_for @restaurant do |f|%>
+<%= f.label :restaurant_name%>
+<%= f.text_field :name%>
+<%= f.label :password%>
+<%= f.password_field :password%>
+<%= f.label :password_confirmation%>
+<%= f.password_field :password_confirmation%>
+<%= f.label :owner%>
+<%= f.text_field :owner%>
+<%= f.label :location%>
+<%= f.text_field :location%>
+<%= f.label :cuisine%>
+<%= f.text_field :cuisine%>
+<%= f.submit%>
+<%end%>
