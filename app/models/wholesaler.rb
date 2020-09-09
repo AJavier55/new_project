@@ -6,4 +6,5 @@ class Wholesaler < ApplicationRecord
 
 
     validates :name, :location, uniqueness: true
+    validates :name, :location, :occupation, presence: true 
 end

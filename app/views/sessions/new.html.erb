@@ -1,3 +1,9 @@
+<%if flash[:errors]%>
+<%="Username or Password is incorrect"%>
+    <%end%>
+
+
+
 <h1>Welcome!</h1>
 
 <%= form_for :session, url: login_path  do |f|%>
@@ -8,5 +14,5 @@
 <%=f.submit "Log in"%>
 <%end%>
 
-<h3>If you're new to **app name**, please sign up here:</h3>
-<%=link_to "Create an account", new_restaurant_path%>
+<h3>If you're new to The Whole Story, please sign up here:</h3>
+<%= link_to '<button type="button">Create an account</button>'.html_safe, new_restaurant_path %>

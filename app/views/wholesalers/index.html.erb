@@ -1,4 +1,4 @@
-<%=link_to "Create Wholesaler", new_wholesaler_path, {id: "link-test"} %>
+<%= link_to '<button type="button">Create New Wholesaler</button>'.html_safe, new_wholesaler_path %>
 <h1>Wholesalers</h1>
 
 <% @wholesalers.each do |wholesaler|%>

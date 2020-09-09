@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
           session[:restaurant_id] = @restaurant.id
           redirect_to restaurant_path(@restaurant)
         else 
-          flash[:error] = "Username or Password Incorrect"
+          flash[:errors] = "Username or Password Incorrect"
           redirect_to new_login_path
         end 
       end 
