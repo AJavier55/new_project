@@ -10,10 +10,12 @@ class WholesalersController < ApplicationController
 
     def new
         @wholesaler = Wholesaler.new
+        5.times{@wholesaler.wholesaler_products.build}
     end
 
     def create
         @wholesaler = Wholesaler.create(wholesaler_params)
+        byebug
         if @wholesaler.valid? 
         redirect_to wholesaler_path(@wholesaler)
         else 
@@ -42,7 +44,7 @@ class WholesalersController < ApplicationController
     private
 
     def wholesaler_params
-        params.require(:wholesaler).permit(:name, :location, :occupation, product_ids:[], product_attributes:[:name])
+        params.require(:wholesaler).permit(:name, :location, :occupation, wholesaler_products_attributes: [:product_id])
     end
 
     def find_wholesaler

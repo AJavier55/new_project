@@ -13,10 +13,10 @@
 <%= f.label "Business Type" %>
 <%= f.text_field :occupation%>
 <p>Choose or enter a product</p>
-<%= f.collection_select :product_ids, Product.all, :id, :name %>
+
   <%f.label "Enter Product Name"%>
-  <%= f.fields_for :products, @wholesaler.products.build do |products_fields| %>
-    <%= products_fields.text_field :name %>
+  <%= f.fields_for  :wholesaler_products do |products_fields| %>
+   <%= products_fields.collection_select :product_id, Product.all, :id, :name %>
   <% end %>
   <%= f.submit %>
 <%end%>

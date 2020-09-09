@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorized, only: [:new, :login]
+    skip_before_action :authorized, only: [:index, :new, :login]
     
     def index
     end
@@ -19,9 +19,10 @@ class SessionsController < ApplicationController
         end 
       end 
 
-      def destroy
+      def logout
         session.delete(:restaurant_id)
         @current_restaurant = nil 
+        redirect_to "/sessions"
       end
 
 end

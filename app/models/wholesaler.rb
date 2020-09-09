@@ -3,7 +3,7 @@ class Wholesaler < ApplicationRecord
     has_many :restaurants, through: :reviews 
     has_many :wholesaler_products
     has_many :products, through: :wholesaler_products
-    accepts_nested_attributes_for :products
+    accepts_nested_attributes_for :wholesaler_products
 
     validates :name, :location, uniqueness: true
     validates :name, :location, :occupation, presence: true 
