@@ -14,15 +14,24 @@ class WholesalersController < ApplicationController
 
     def create
         @wholesaler = Wholesaler.create(wholesaler_params)
+        if @wholesaler.valid? 
         redirect_to wholesaler_path(@wholesaler)
+        else 
+            flash[:my_errors] = @wholesaler.errors.full_messages  
+            redirect_to new_wholesaler_path  
+        end
     end
 
     def edit
     end
 
     def update
-        @wholesaler.update(wholesaler_params)
+        if @wholesaler.update(wholesaler_params)
         redirect_to wholesaler_path(@wholesaler)
+        else
+            flash[:my_errors] = @wholesaler.errors.full_messages  
+            redirect_to edit_wholesaler_path  
+        end
     end
 
     def destroy

@@ -16,15 +16,15 @@ WholesalerProduct.destroy_all
 
 
 60.times do 
-    Restaurant.create(name: Faker::Restaurant.name, owner: Faker::Name.name, location: Faker::Address.full_address, cuisine: Faker::Restaurant.type)
+    Restaurant.create!(name: Faker::Restaurant.unique.name, owner: Faker::Name.name, location: Faker::Address.full_address, cuisine: Faker::Restaurant.type, password: "pass1234")
 end 
 
 100.times do 
-    Wholesaler.create(name: Faker::Company.name, location: Faker::Address.full_address, occupation: Faker::Food.ingredient)
+    Wholesaler.create(name: Faker::Company.unique.name, location: Faker::Address.full_address, occupation: Faker::Food.ingredient)
 end
 
 50.times do
-    Review.create!(restaurant_id: Restaurant.all.sample.id, wholesaler_id: Wholesaler.all.sample.id, star_rating: rand(1..5), written_review: Faker::Restaurant.review)
+    Review.create(restaurant_id: Restaurant.all.sample.id, wholesaler_id: Wholesaler.all.sample.id, star_rating: rand(1..5), written_review: Faker::Restaurant.review)
 end
 
 70.times do 

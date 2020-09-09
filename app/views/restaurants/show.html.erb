@@ -1,3 +1,10 @@
 <h1>Restaurant Profile</h1>
 
 <h1><%=@restaurant.name%></h1>
+
+
+<h3>Recent Reviews</h3>
+<%@restaurant.reviews.each do |review|%>
+<p><%= review.written_review%></p>
+<p><%= review.star_rating%> stars </p>
+<%end%>

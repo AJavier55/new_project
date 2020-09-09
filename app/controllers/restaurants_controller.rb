@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
     before_action :find_restaurants, only: [:show, :edit, :update, :destroy]
-    skip_before_action :authorized, only: [:new, :create]
+    skip_before_action :authorized, only: [:new, :create, :index]
 
     def index
         @restaurants = Restaurant.all 
