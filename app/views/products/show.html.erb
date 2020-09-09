@@ -1,6 +1,8 @@
+<div class="jumbotron text-center">
 <h2><%= @product.name %></h2>
+</div>
 
-<h4>Wholesalers:</h4>
+<h4>Wholesalers:</h4></>
 <% @product.wholesaler_products.each do |wholesaler_product|%>
 <p><%= link_to wholesaler_product.wholesaler.name, wholesaler_path(wholesaler_product.product)%></p>
 <%end%>

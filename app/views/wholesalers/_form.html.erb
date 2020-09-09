@@ -4,17 +4,23 @@
 <%end%>
 <%end%>
 
+<h1>New Wholesaler</h1>
 <%= form_for @wholesaler do |f|%>
 <%= f.label :name %>
 <%= f.text_field :name%>
 <%= f.label :location %>
 <%= f.text_field :location%>
-<%= f.label :business_type %>
+<%= f.label "Business Type" %>
 <%= f.text_field :occupation%>
-<% @wholesaler.wholesaler_products.each do |wholesaler_product|%>
-<%= wholesaler_product.product.name%>
-<%= f.label :product%>
-<%= f.text_field :product %>
+<p>Choose or enter a product</p>
+<%= f.collection_select :product_ids, Product.all, :id, :name %>
+  <%f.label "Enter Product Name"%>
+  <%= f.fields_for :products, @wholesaler.products.build do |products_fields| %>
+    <%= products_fields.text_field :name %>
+  <% end %>
+  <%= f.submit %>
 <%end%>
-<%= f.submit%>
-<%end%>
+
+
+
+
