@@ -16,4 +16,12 @@ def fave_wholesalers
     end
 end
 
+# def review_first 
+#     self.reviews.each do |rev|
+#         rev.written_review.count[0]
+#     end
+# end
+   
+
+
 end

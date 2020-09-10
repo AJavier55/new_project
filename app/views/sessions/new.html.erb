@@ -1,11 +1,10 @@
+<%= render 'newstyle'%>
+
 <%if flash[:errors]%>
 <%="Username or Password is incorrect"%>
     <%end%>
 
 
-<nav class="navbar navbar-default">
-<h1>Welcome!</h1>
-</nav>
 
 <%= form_for :session, url: login_path  do |f|%>
 <%= f.label :restaurant_name%>
