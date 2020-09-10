@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Restaurant Showpage</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -10,21 +10,10 @@
   <style>    
     /* Set black background color, white text and some padding */
     footer {
-      background-color: #EBF5EE;
-      color: #424B54;
+      background-color: #555;
+      color: white;
       padding: 15px;
     }
-    body {
-      background-color: #EBF5EE;
-     
-
-    }
-    .navbar {
-      background-color: #424B54;
-      
-    }
-
-
   </style>
 </head>
 <body>
@@ -41,8 +30,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="wholesalers/index">Search by Wholesaler</a></li>
-        <li><a href="products/index">Search by Product</a></li>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Messages</a></li>
       </ul>
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group input-group">
@@ -54,7 +43,9 @@
           </span>        
         </div>
       </form>
-      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+      </ul>
     </div>
   </div>
 </nav>
@@ -63,7 +54,7 @@
   <div class="row">
     <div class="col-sm-3 well">
       <div class="well">
-        <p><a href="#">Restaurant Profile</a></p>
+        <p><a href="#">My Profile</a></p>
         <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
       </div>
       <div class="well">

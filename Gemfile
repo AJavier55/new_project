@@ -7,9 +7,9 @@ ruby '2.6.1'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 
 gem 'jquery-rails'
-# gem 'simple_form'
-# gem 'popper_js'
-# gem 'tether-rails'
+gem 'simple_form'
+gem 'popper_js'
+gem 'tether-rails'
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
