@@ -16,4 +16,12 @@ def fave_wholesalers
     end
 end
 
+
+    # def first_rev
+    #     self.reviews.each_with_index do |review, index|
+    #         review.written_review
+    #     end
+    # end
+
+
 end

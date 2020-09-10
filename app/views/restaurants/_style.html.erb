@@ -41,8 +41,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="wholesalers/index">Search by Wholesaler</a></li>
-        <li><a href="products/index">Search by Product</a></li>
+        <li><a href="/wholesalers">Search by Wholesaler</a></li>
+        <li><a href="/products">Search by Product</a></li>
       </ul>
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group input-group">
@@ -80,7 +80,7 @@
       <div class="alert alert-success fade in">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
         <p><strong>Ey!</strong></p>
-        People are looking at your profile. Find out who.
+        Restaurants with the same cuisine
       </div>
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>
@@ -92,25 +92,22 @@
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
             <div class="panel-body">
-              <p contenteditable="true">Status: Feeling Blue</p>
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-thumbs-up"></span> Like
-              </button>     
+              <p  contenteditable="true"><h1><%=@restaurant.name%></h1></p>
             </div>
           </div>
         </div>
       </div>
-      
+      <%@restaurant.reviews.each_with_index do |review, i| %>
       <div class="row">
         <div class="col-sm-3">
           <div class="well">
-           <p>John</p>
+           <p><%= review.wholesaler.name[0]%></p>
            <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
           </div>
         </div>
         <div class="col-sm-9">
           <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+            <p><%=review.written_review[1]%></p>
           </div>
         </div>
       </div>
@@ -123,7 +120,7 @@
         </div>
         <div class="col-sm-9">
           <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+            <p><%= review.written_review%></p>
           </div>
         </div>
       </div>
@@ -136,7 +133,7 @@
         </div>
         <div class="col-sm-9">
           <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+            <p><%= review.written_review%></p>
           </div>
         </div>
       </div>
@@ -150,6 +147,7 @@
         <div class="col-sm-9">
           <div class="well">
             <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          <%end%>
           </div>
         </div>
       </div>     
