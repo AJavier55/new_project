@@ -7,6 +7,7 @@ ruby '2.6.1'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 
 gem 'jquery-rails'
+gem 'bootstrap_form'
 gem 'simple_form'
 gem 'popper_js'
 gem 'tether-rails'

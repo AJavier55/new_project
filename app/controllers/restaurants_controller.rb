@@ -12,7 +12,6 @@ class RestaurantsController < ApplicationController
     def new
         @restaurant = Restaurant.new 
     end
-
    
     def create
         @restaurant = Restaurant.create(restaurant_params)
@@ -23,6 +22,24 @@ class RestaurantsController < ApplicationController
                 redirect_to new_restaurant_path
             end 
     end
+
+
+    def edit
+    end
+
+    def update
+        if @restaurant.update(restaurant_params)
+            redirect_to restaurant_path(@restaurant)
+            else
+                flash[:my_errors] = @restaurant.errors.full_messages  
+                redirect_to edit_restaurant_path  
+            end
+    end
+
+        def destroy
+            @restaurant.destroy 
+            redirect_to restaurants_path
+        end
 
     private 
 

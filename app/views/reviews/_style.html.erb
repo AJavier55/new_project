@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
+	<title>New Review</title>
    <!--Made with love by Mutiullah Samim -->
    
 	<!--Bootsrap 4 CDN-->
@@ -19,64 +19,60 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<div class="container">
-	<div class="d-flex justify-content-center h-100">
-		<div class="card">
-			<div class="card-header">
-	<div class="d-flex justify-content-center">
-				<h3>Create A New Review</h3>
-				<div class="d-flex justify-content-end social_icon">
-					<%# <span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span> %>
-				</div>
-			</div>
-			
-            <%= form_for @review, url: new_review_path  do |f|%>
-			<div class="card-body">
+<style>
+.new-form{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #424B54;
+}
+.field{
+    display: flex;
+    flex-direction: column;
+}
+.name{
+    max-width: 30vw;
+}
+</style>
+<div>
+<% if flash[:review_errors]%>
+<% flash[:review_errors].each do |error|%>
+<p><%= error %></p>
+<%end%>
+<%end%>
 
-				<form>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-						<input <%=f.number_field :star_rating%> >
-					
-						
-					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input <%=f.password_field :password%>>
-							
-					</div>
-					</div>
-					<div class="form-group">
-						<div class="d-flex justify-content-center">
-						<input <%=f.submit "Log in"%>>
-						<%end%>
-				</div>
-					</div>
-				</form>
-					<div class="d-flex justify-content-center">
-                    <h5>Don't see your wholesaler? Create a new one and give them a review!</h5>
-					<a href="/restaurants/new">Don't have an account? Sign up!</a>
-			</div>
-			<%# <div class="card-footer">
-				<div class="d-flex justify-content-center links">
-				</div> %>
-				<%# <div class="d-flex justify-content-center">
-					<a href="/restaurants/new">Don't have an account? Sign up!</a>
-				</div> %>
-			</div>
-		</div>
-	</div>
+<%= form_with(model: @review, local: true, :html => {class: 'new-form'} ) do |form| %>
+ 
+ <div class= "field">
+ <%= form.label @current_restaurant.name%><br>
+<%= form.hidden_field :restaurant_id, value: @current_restaurant.id%>
+ </div>
+ 
+ <div class= "field">
+ <%= form.label :wholesaler_id%><br>
+ <%= form.collection_select :wholesaler_id, Wholesaler.all, :id, :name%><br>
+ </div>
+
+<div class= "field">
+<%= form.label :star_rating%>
+<%= form.number_field :star_rating%>
 </div>
+
+<div class= "field">
+<%= form.label :written_review%>
+<%= form.text_field :written_review%><br>
+</div>
+<div class="actions">
+<%= form.submit%>
+</div>
+<%end%>
+
+<h3>Don't see your wholesaler? Create a new one and give them a review! <%=link_to "New Wholesaler", new_wholesaler_path%>
+</div>
+
 </body>
 </html>
-
-
 
 
 

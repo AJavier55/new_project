@@ -10,17 +10,25 @@ validates :name, :cuisine, :owner, :location, presence: true
 # validates :name, inclusion: {in: Restaurant.all}
 
 
-def fave_wholesalers
-    self.reviews.each do |review|
-        review.star_rating  if review.star_rating >= 4 
+# def fave_wholesalers
+#     self.reviews.each do |review|
+#         if review.star_rating >= 3
+#             review.star_rating
+#         end
+#     end
+
+# end
+
+def find_by_cuisine(cuisine)
+    Restaurant.all.filter do |restaurant|
+        restaurant.cuisine == cuisine
+        if !self 
+            rest.name
+        end
     end
 end
 
-# def review_first 
-#     self.reviews.each do |rev|
-#         rev.written_review.count[0]
-#     end
-# end
+
    
 
 
