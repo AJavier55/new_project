@@ -6,13 +6,13 @@
 
 
 
-<%= form_for :session, url: login_path  do |f|%>
-<%= f.label :restaurant_name%>
-<%= f.text_field :name%>
-<%=f.label :password%>
-<%=f.password_field :password%>
-<%=f.submit "Log in"%>
-<%end%>
-<br>
+<%# <%= form_for :session, url: login_path  do |f|%>
+<%# <%= f.label :restaurant_name%>
+<%# <%= f.text_field :name%>
+<%# <%=f.label :password%> 
+<%# <%=f.password_field :password%> 
+<%# <%=f.submit "Log in"%> 
+<%# <%end%> 
+
 <%# <h3>If you're new to The Whole Story, please sign up here:</h3>
 <%= link_to '<button type="button">Create an account</button>'.html_safe, new_restaurant_path %> 

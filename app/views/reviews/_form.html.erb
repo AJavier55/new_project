@@ -1,10 +1,11 @@
+
 <% if flash[:review_errors]%>
 <% flash[:review_errors].each do |error|%>
 <p><%= error %></p>
 <%end%>
 <%end%>
 
-<%= simple_form_for @review  do |f|%>
+<%= form_for @review do |f|%>
  <%= f.label @current_restaurant.name%><br>
 <%= f.hidden_field :restaurant_id, value: @current_restaurant.id%>
  <%= f.label :wholesaler_id%><br>

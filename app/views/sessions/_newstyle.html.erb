@@ -23,44 +23,56 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
+	<div class="d-flex justify-content-center">
 				<h3>Log In</h3>
 				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
+					<%# <span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span> %>
 				</div>
 			</div>
 			
+
+
+
+
+
+         	<%= form_for :session, url: login_path  do |f|%>
 			<div class="card-body">
+
 				<form>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input 	<%= f.text_field :name%> >
+					
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input <%=f.password_field :password%>>
+							
 					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn">
+						<div class="d-flex justify-content-center">
+						<input <%=f.submit "Log in"%>>
+						<%end%>
+				</div>
 					</div>
 				</form>
+					<div class="d-flex justify-content-center">
+					<a href="/restaurants/new">Don't have an account? Sign up!</a>
 			</div>
-			<div class="card-footer">
+			<%# <div class="card-footer">
 				<div class="d-flex justify-content-center links">
-				</div>
-					Don't have an account?<a href="/restaurants/new">Sign Up</a>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-				</div>
+				</div> %>
+				<%# <div class="d-flex justify-content-center">
+					<a href="/restaurants/new">Don't have an account? Sign up!</a>
+				</div> %>
 			</div>
 		</div>
 	</div>

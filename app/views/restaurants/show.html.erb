@@ -1,12 +1,12 @@
 <%= render "showstyle" %> 
 <div class="container">
-<h1>Restaurant Profile</h1>
+<%# <h1>Restaurant Profile</h1>
 
 
 <h1><%=@restaurant.name%></h1>
-<h3>Cuisine: <%=@restaurant.cuisine%></h3>
-<h3>Owner: <%=@restaurant.owner%></h3>
-<h3>Location: <%=@restaurant.location%></h3>
+<%# <h3>Cuisine: <%=@restaurant.cuisine%>
+<%# <h3>Owner: <%=@restaurant.owner%>
+<%# <h3>Location: <%=@restaurant.location%>
 
 
 <%# <h3>Favorite Wholesalers: 4+ star rating</h3>
@@ -15,17 +15,17 @@
 
 <%# <h3>Recent Reviews</h3>
 <%@restaurant.reviews.each do |review|%>
-<%# <p><%= review.wholesaler.name%></p>
-<%# <p><%= review.written_review%></p>
-<%# <p><%= review.star_rating%> stars </p>
-<%# <%end%> %> %> %>
+<%# <p><%= review.wholesaler.name%>
+<%# <p><%= review.written_review%>
+<%# <p><%= review.star_rating%> 
+<%# <%end%> 
 
-<%= link_to '<button type="button">Search by Product</button>'.html_safe, products_path %><br>
-<br>
-<%= link_to '<button type="button">Search by Wholesaler</button>'.html_safe, wholesalers_path %><br>
-<br>
+<%# <%= link_to '<button type="button">Search by Product</button>'.html_safe, products_path %>
+
+<%# <%= link_to '<button type="button">Search by Wholesaler</button>'.html_safe, wholesalers_path %>
 
 
-<%=link_to "Write a new Review", new_review_path%> %> %>
+<%# 
+<%=link_to "Write a new Review", new_review_path%> 
 
-</div>
+
