@@ -2,13 +2,13 @@ class ReviewsController < ApplicationController
     before_action :find_review, only: [:edit, :update, :destroy]
     
     def new
-        @review = Review.new
+       @review = Review.new
     end
 
     def create
-        @reviews = Review.create(review_params)
+        @review = Review.create(review_params)
         if @review.valid?
-            redirect_to review_path(@review)
+            redirect_to restaurant_path(@current_restaurant)
         else
             flash[:review_errors] = @review.errors.full_messages 
             redirect_to new_review_path

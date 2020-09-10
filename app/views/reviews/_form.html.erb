@@ -6,8 +6,9 @@
 
 <%= form_for @review do |f|%>
  <%= f.label @current_restaurant.name%><br>
+<%= f.hidden_field :restaurant_id, value: @current_restaurant.id%>
  <%= f.label :wholesaler_id%><br>
- <%= f.text_field :wholesaler_id%><br>
+ <%= f.collection_select :wholesaler_id, Wholesaler.all, :id, :name%><br>
  <br>
 <%= f.label :star_rating%>
 <%= f.number_field :star_rating%><br>
@@ -17,3 +18,5 @@
 <br>
 <%= f.submit%>
 <%end%>
+
+<h3>Don't see your wholesaler? Create a new one and give them a review! <%=link_to "New Wholesaler", new_wholesaler_path%>

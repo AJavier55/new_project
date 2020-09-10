@@ -10,12 +10,11 @@ class WholesalersController < ApplicationController
 
     def new
         @wholesaler = Wholesaler.new
-        5.times{@wholesaler.wholesaler_products.build}
+        3.times{@wholesaler.wholesaler_products.build}
     end
 
     def create
         @wholesaler = Wholesaler.create(wholesaler_params)
-        byebug
         if @wholesaler.valid? 
         redirect_to wholesaler_path(@wholesaler)
         else 

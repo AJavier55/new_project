@@ -7,7 +7,7 @@ class Restaurant < ApplicationRecord
 
 validates :name, :location, uniqueness: true 
 validates :name, :cuisine, :owner, :location, presence: true 
-validates :name, inclusion: {in: Restaurant.all}
+# validates :name, inclusion: {in: Restaurant.all}
 
 
 def fave_wholesalers
