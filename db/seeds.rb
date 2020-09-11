@@ -27,9 +27,9 @@ WholesalerProduct.destroy_all
     Product.create(name: Faker::Food.unique.ingredient)
 end
 
-20.times do
-    WholesalerProduct.create(product: Product.all.sample.id, wholesaler_id: Wholesaler.all.sample.id)
-end
+# 20.times do
+#     WholesalerProduct.create(product: Product.all.sample.id, wholesaler_id: Wholesaler.all.sample.id)
+# end
 
 Wholesaler.create(name: "Brenner & Sons" , location: Faker::Address.unique.full_address, occupation: "Butcher", img_url: "https://images.squarespace-cdn.com/content/v1/582619c303596e8d06a16a3e/1484509340367-1OS3RP8T756V8GAGWYDU/ke17ZwdGBToddI8pDm48kOVcjuUL21J4oigwFlCHDM4UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcuHgxV5AklEi2TK5rxUT1wWO8H5uBxFXe5ei4q4vCsjy80piU39IriItUyksJW2Se/Meat-1.jpg?format=1500w")
 Wholesaler.create(name: "Barry's Berry Farm" , location: Faker::Address.unique.full_address, occupation: "Fruit Vendor", img_url: "https://img.freepik.com/free-photo/harvesting-strawberries-basket-strawberries-with-green-leaves-wicker-basket_87555-2059.jpg?size=626&ext=jpg")
