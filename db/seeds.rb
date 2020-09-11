@@ -23,13 +23,13 @@ WholesalerProduct.destroy_all
 # #     Review.create(restaurant: Restaurant.all.sample.id, wholesaler: Wholesaler.all.sample.id, star_rating: rand(1..5), written_review: Faker::Restaurant.review)
 # # end
 
-# 70.times do 
-#     Product.create(name: Faker::Food.ingredient)
-# end
+40.times do 
+    Product.create(name: Faker::Food.unique.ingredient)
+end
 
-# 80.times do
-#     WholesalerProduct.create(product_id: Product.all.sample.id, wholesaler_id: Wholesaler.all.sample.id)
-# end
+20.times do
+    WholesalerProduct.create(product: Product.all.sample.id, wholesaler_id: Wholesaler.all.sample.id)
+end
 
 Wholesaler.create(name: "Brenner & Sons" , location: Faker::Address.unique.full_address, occupation: "Butcher", img_url: "https://images.squarespace-cdn.com/content/v1/582619c303596e8d06a16a3e/1484509340367-1OS3RP8T756V8GAGWYDU/ke17ZwdGBToddI8pDm48kOVcjuUL21J4oigwFlCHDM4UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcuHgxV5AklEi2TK5rxUT1wWO8H5uBxFXe5ei4q4vCsjy80piU39IriItUyksJW2Se/Meat-1.jpg?format=1500w")
 Wholesaler.create(name: "Barry's Berry Farm" , location: Faker::Address.unique.full_address, occupation: "Fruit Vendor", img_url: "https://img.freepik.com/free-photo/harvesting-strawberries-basket-strawberries-with-green-leaves-wicker-basket_87555-2059.jpg?size=626&ext=jpg")
@@ -45,3 +45,6 @@ Wholesaler.create(name: "Turkish Cinnamon & Spice" , location: Faker::Address.un
 Wholesaler.create(name: "Antonthy's Greens" , location: Faker::Address.unique.full_address, occupation: "Produce", img_url: "https://images.squarespace-cdn.com/content/v1/5888d01fb8a79b5efafd6e84/1487998947304-D30PX5UN8WV1GC0SM53Z/ke17ZwdGBToddI8pDm48kDu-OvKe9-yMBj32JSWknrt7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UZNNUmsixw3l8iPy3vgDTPMwfMBbaTJA8uE3oWp8JUwqzkQXHaRS3Yhvu0vV6Jt1AA/farm-to-table-background.jpg?format=2500w")
 Wholesaler.create(name: "Oranges R' Us" , location: Faker::Address.unique.full_address, occupation: "Citrus", img_url: "https://images-na.ssl-images-amazon.com/images/I/71H3zZbHH0L._AC_SL1134_.jpg")
 Wholesaler.create(name: "Barley Bros" , location: Faker::Address.unique.full_address, occupation: "Grains", img_url: "https://i.pinimg.com/originals/c7/c5/1c/c7c51cf15e19716ef2454d8b3bed826e.jpg")
+
+
+# Product.create(name: Faker::Food.unique.ingredient)
