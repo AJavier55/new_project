@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-    before_action :find_restaurants, only: [:show, :edit, :update, :destroy]
+    before_action :find_restaurants, only: [:show,:edit, :update, :destroy]
     skip_before_action :authorized, only: [:new, :create, :index]
 
     def index
@@ -15,7 +15,8 @@ class RestaurantsController < ApplicationController
    
     def create
         @restaurant = Restaurant.create(restaurant_params)
-            if @restaurant.valid?
+            if @restaurant.valid? 
+                session[:restaurant_id] = @restaurant.id  
                 redirect_to restaurant_path(@restaurant)
             else 
                 flash[:errors] = @restaurant.errors.full_messages
