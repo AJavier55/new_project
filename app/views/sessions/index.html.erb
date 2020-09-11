@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="session.scss">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -28,6 +29,12 @@
       
     }
 
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+       background-color: #ECDCB0;
+      margin-bottom: 0;
+    }
+
 
     .carousel-inner img {
       width: 100%; /* Set width to 100% */
@@ -39,10 +46,19 @@
       .carousel-caption {
         display: none; 
       }
+
     }
   </style>
 </head>
 <body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1 style="color: #AA2D0E; font-family: 'Montserrat', sans-serif">The Whole Story</h1>      
+    <p style="font-family: 'Montserrat', sans-serif">Find & Review Wholesalers</p>
+  </div>
+</div>
+
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -66,30 +82,60 @@
 </nav>
     
 
-<div class="container text-center">    
-  <h3>What We Do</h3>
-  <br>
+<div class="container text-center"><hr>    
+ 
   <div class="row">
     <div class="col-sm-6">
       <img src="https://envato-shoebox-0.imgix.net/f5e4/352e-05f3-46ea-9d01-d74b6b7e2f2f/P_IMG_1797+.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=9af5b8a93f254897e62b43186f579802" class="img-responsive" style="width:100%" alt="Image">
-      <p>Alicia's Fish Shack</p>
+    
     </div>
     <div class="col-sm-6"> 
       <img src="https://klesicks.com/wp-content/uploads/2017/12/klesicks_coverphoto_farmer-e1513371366273.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>Mason and Sons</p>    
-    </div>
+     
+    </div><hr>
+    
     <div class="col-sm-6"> 
       <img src="https://www.cresthillbakery.com/wp-content/uploads/2014/01/Pain-de-Campagne-Bread-8256.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>Alex's Bread</p>    
+        
     </div>
     <div class="col-sm-6"> 
       <img src=https://www.thespruce.com/thmb/lfcj3XzkCiWI-JMmT_w43bIccdI=/2121x1414/filters:fill(auto,1)/Free-range-chicken-GettyImages-522175210-588f71563df78caebcfe52c5.jpg class="img-responsive" style="width:100%" alt="Image">
-      <p>Eggs</p>    
+         
     </div>
   </div>
 
 </div>
 
+<div class="container text-center">    
+  <h1>Our Partners</h1>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="https://www.costacruises.com/content/dam/costa/inventory-assets/activity-types/casual/pizzeria-pummidoro/pizzeria-pummid-oro.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <h4 style="color: #AA2D0E">John's Pizza</h4>
+    </div>
+    <div class="col-sm-6"> 
+      <img src="https://www.lisbonguru.com/wp-content/uploads/2018/07/mar-restaurant-parque-nacoes.png" class="img-responsive" style="width:100%" alt="Image">
+      <h4 style="color: #AA2D0E">Fisherman's Horizon</h4>    
+    </div>
+    <div class="col-sm-6"> 
+      <img src="https://res.cloudinary.com/culturemap-com/image/upload/ar_4:3,c_fill,g_faces:center,w_1200/v1586963001/photos/310000_original.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <h4 style="color: #AA2D0E">Apples and Oranges</h4>
+    </div>
+    <div class="col-sm-6"> 
+      <img src="https://www.mightysweet.com/mesohungry/wp-content/uploads/2012/05/01-The-Meatball-Shop-Williamsburg.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <h4 style="color: #AA2D0E">Meatball Shack</h4>
+    </div> 
+    <div class="col-sm-6"> 
+      <img src="https://cdnimg.webstaurantstore.com/uploads/buying_guide/2015/2/bakery-equip-article-1.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <h4 style="color: #AA2D0E">Baker's Dozen</h4>
+    </div>     
+    <div class="col-sm-6"> 
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZ-c-xNOGeFtN3j4x9q929keq-APEJGAEl6A&usqp=CAU" class="img-responsive" style="width:100%" alt="Image">
+      <h4 style="color: #AA2D0E">Vegan Delight</h4>
+    </div> 
+  </div>
+</div><br>
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>

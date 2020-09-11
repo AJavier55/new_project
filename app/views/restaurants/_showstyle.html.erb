@@ -87,7 +87,7 @@
          <p><%=link_to rest.name, restaurant_path(rest.id)%></p>
  <%end%> 
 
-<div style="color: #155724; font-family: 'Montserrat', sans-serif"> <%= button_to "Edit Account Info", edit_restaurant_path(@restaurant) %> </div>
+<div style="color: #155724; font-family: 'Montserrat', sans-serif"> <%= button_to "Edit Account Info", edit_path(@restaurant) %> </div>
 <div style="color: #155724; font-family: 'Montserrat', sans-serif"><%= button_to "Delete Account", restaurant_path(@restaurant), {method: :delete, data: {confirm: true}}%></div>
     </div>
     <div class="col-sm-7">

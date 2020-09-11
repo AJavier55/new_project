@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :wholesalers
   resources :restaurants
-post '/restaurants/edit', to: 'restaurants#edit', as: 'edit'
+  patch '/restaurants/edit', to: 'restaurants#edit', as: 'edit'
   post '/login', to: 'sessions#login', as: 'login'
   get '/sessions/new', to: 'sessions#new', as: 'new_login'
   get '/sessions', to: 'sessions#index', as: 'homepage'

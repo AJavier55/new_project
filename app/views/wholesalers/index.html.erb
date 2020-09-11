@@ -1,6 +1,7 @@
-<%= link_to '<button type="button">Create New Wholesaler</button>'.html_safe, new_wholesaler_path %>
-<h1>Wholesalers</h1>
+<%=render "indexstyle"%>
+<%# <%= link_to '<button type="button">Create New Wholesaler</button>'.html_safe, new_wholesaler_path %>
+<%#<h1>Wholesalers</h1>
 
 <% @wholesalers.each do |wholesaler|%>
-<p><%= link_to wholesaler.name, wholesaler_path(wholesaler.id)%></p>
-<%end%>
+<%# <p><%= link_to wholesaler.name, wholesaler_path(wholesaler.id)%></p>
+<%#<%end%> 
