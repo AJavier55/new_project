@@ -1,9 +1,15 @@
 
 <%=render "indexstyle"%>
- <<%= link_to '<button type="button">Create New Wholesaler</button>'.html_safe, new_wholesaler_path %>
-<h1>Wholesalers</h1>
-<div class="container-index">
-<% @wholesalers.each do |wholesaler|%>
- <div class="wholesale"><img src= "https://images.getbento.com/accounts/a3e72eb05f5158bbaa07dab02b2d4748/media/images/60195Photo_Apr_25_8_30_36_PM.jpg?fit=max&w=1800&auto=format,compress">
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<h1 class= "text-center text-uppercase" style="color: #333138;" >Wholesalers</h1>
+<h4 class="container-index" style="font-family: 'Montserrat', sans-serif">
+<% @wholesalers.each do |wholesaler|%> 
+ <div class="wholesale"> 
+<img src="<%= wholesaler.img_url%>">     
  <%= link_to wholesaler.name, wholesaler_path(wholesaler.id)%></div>
 <%end%> </div>
+
+<footer class="container-fluid text-center" style="background-color: #d4edda; color: #155724; font-family: 'Montserrat', sans-serif">
+  <p style="font-family: 'Montserrat', sans-serif"><%= link_to '<button type="button">Create New Wholesaler</button>'.html_safe, new_wholesaler_path %></p>
+ <p style="font-family: 'Montserrat', sans-serif"> <%= link_to "Logout", logout_path, method: :delete%></p>
+</footer>

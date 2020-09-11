@@ -44,7 +44,7 @@ class WholesalersController < ApplicationController
     private
 
     def wholesaler_params
-        params.require(:wholesaler).permit(:name, :location, :occupation, wholesaler_products_attributes: [:product_id])
+        params.require(:wholesaler).permit(:name, :location, :occupation, :img_url, wholesaler_products_attributes: [:product_id])
     end
 
     def find_wholesaler
