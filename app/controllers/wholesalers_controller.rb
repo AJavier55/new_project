@@ -6,6 +6,7 @@ class WholesalersController < ApplicationController
     end
 
     def show
+
     end
 
     def new
@@ -37,7 +38,7 @@ class WholesalersController < ApplicationController
 
     def destroy
         @wholesaler.destroy
-        redirect_to wholesaler_path
+        redirect_to wholesalers_path
     end
 
     private

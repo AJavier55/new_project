@@ -1,19 +1,18 @@
 <%=render "showstyle"%>
-
+<%# 
 <h2><%= @wholesaler.name%></h2>
-<h4>Address:<%= @wholesaler.location%></h4>
-<h4>Business type:<%= @wholesaler.occupation%></h4>
+<%# <h4>Address:<%= @wholesaler.location%></h4> 
+<%# <h4>Business type:<%= @wholesaler.occupation%></h4> 
 
-<h2>Products:</h2>
-<% @wholesaler.wholesaler_products.each do |wholesaler_product|%>
-<h4><%= wholesaler_product.product.name%></h4>
-<%end%>
-
+<%# <h2>Products:</h2> %>
+<%# <% @wholesaler.wholesaler_products.each do |wholesaler_product|%> 
+<%# <h4><%= wholesaler_product.product.name%></h4> 
+<%# <%end%> %>
+<%# 
 <h2>Reviews:</h2>
 <%@wholesaler.reviews.each do |review|%>
-<p>Reviewer:<%= review.restaurant.name%></p>
-<p><%= review.written_review%><p>
-<p><%=review.star_rating%>stars</p>
-<%end%>
-
- <%= button_to "Delete Account", wholesaler_path(@wholesaler), {method: :delete, data: {confirm: true}} %>
+<%# <p>Reviewer:<%= review.restaurant.name%></p>
+<%# <p><%= review.written_review%><p>
+<%# <p><%=review.star_ratingstars</p> %>
+<%# <%end%> 
+<%# 

@@ -4,28 +4,35 @@
 <%end%>
 <%end%>
 
-<h1>New Wholesaler</h1>
-div class="d-flex align-content-center">
+<div class="d-flex align-content-center">
   <div class="row justify-content-center">
-    <div class="col-6" style="background-color:lavender;">
+   <div class="card">
+  <div class="card-header">
+  <h1 class= "text-center" style="color: #ECDCB0">New Wholesaler</h1>
+  </div>
+    <div style="background-color:lavender;">
+   
 <%= bootstrap_form_for @wholesaler do |f|%>
-<%= f.label :name %>
+<div class="card-body">
 <%= f.text_field :name%>
-<%= f.label :location %>
-<%= f.text_field :location%>
-<%= f.label "Business Type" %>
-<%= f.text_field :occupation%>
-<p>Choose or enter a product</p>
 
-  <%f.label "Enter Product Name"%>
+<%= f.text_field :location%>
+
+<%= f.text_field :occupation%>
+<div>
   <%= f.fields_for  :wholesaler_products do |products_fields| %>
    <%= products_fields.collection_select :product_id, Product.all, :id, :name %>
   <% end %>
+  </div>
+  <div>
   <%= f.submit %>
-<%end%>
+<%end%></div>
 </div>
 </div>
 </div>
+</div>
+</div>
+
 
 
 

@@ -1,29 +1,67 @@
-<% if flash[:review_errors]%>
+<div class="text-uppercase">
+<h2><% if flash[:review_errors]%>
 <% flash[:review_errors].each do |error|%>
 <p><%= error %></p>
 <%end%>
 <%end%>
+</h2>
+</div>
 
+<div class="container">
+<div class="d-flex justify-content-center h-100">
+  <div class="card">
+  <div class="card-header">
+  <h3 class= "text-center">Write a New Review</h3>
+    </div>
+    <div style="background-color:lavender;">
 
-<div class="d-flex align-content-center">
-  <div class="row justify-content-center">
-    <div class="col-6" style="background-color:lavender;">
 <%= bootstrap_form_for @review do |f|%>
- <%= f.label @current_restaurant.name%><br>
+   <div class="card-body">
+
+   <form>
+ <div class="input-group form-group" style="font-family: 'Montserrat', sans-serif">
+<div class="input-group-prepend">
+<div class="text-justify">
+</div>  
+ <h4 class="text-uppercase"><%= f.label @current_restaurant.name%></h4>
 <%= f.hidden_field :restaurant_id, value: @current_restaurant.id%>
- 
+ </div>
+ </div>
+
+ <div class="input-group form-group">
+<div class="input-group-prepend">
+</div>  
  <%= f.collection_select :wholesaler_id, Wholesaler.all, :id, :name%>
- 
+ </div>
 
+<div class="input-group form-group">
+<div class="input-group-prepend">
+</div>  
 <%= f.number_field :star_rating%>
+</div>
 
-
+<div class="input-group form-group">
+<div class="input-group-prepend">
+</div>  
 <%= f.text_field :written_review%>
+</div>
 
+<div class="input-group form-group">
+<div class="input-group-prepend">
+</div>  
 <%= f.submit%>
-<%end%>
 
-<h3>Don't see your wholesaler? Create a new one and give them a review! <%=link_to "New Wholesaler", new_wholesaler_path%>
+<%end%>
+</div>
+</form>
+</div>
+<div class="d-flex justify-content-center">
+<h6><%=link_to "Create New Wholesaler", new_wholesaler_path%></h6>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
